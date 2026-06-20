@@ -49,7 +49,7 @@ if choice == "add":
         try:
             cursor.execute(insert_query, values)
             conn.commit()
-            print("Item added successfully! 💸")
+            print("Item added successfully! ")
         except Exception as e:
             print("Error adding item:", e)
             conn.rollback()
@@ -68,7 +68,7 @@ elif choice == "check":
             for row in results:
                 print(f"#{row[0]} | Game: {row[1]} | Item: {row[2]} | ₹{row[3]}")
                 total += float(row[3])
-            print(f"\n💰 Total Money Spent: ₹{total:.2f}")
+            print(f"\n Total Money Spent: ₹{total:.2f}")
         else:
             print("No entries found.")
     except Exception as e:
